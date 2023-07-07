@@ -1,16 +1,14 @@
 <script lang="ts">
-	import ThemeToggle from "$lib/components/ThemeToggle.svelte";
-	import type { PageData } from "./$types";
-
-	export let data: PageData;
+	import Landing from "$lib/sections/Landing.svelte";
+	import Projects from "$lib/sections/Projects.svelte";
+	import Experience from "$lib/sections/Experience.svelte";
+	import Contact from "$lib/sections/Contact.svelte";
 </script>
 
-<h1>Hello World</h1>
-
-<ThemeToggle theme={data.theme} />
+<Landing />
+<Projects />
+<Experience />
+<Contact />
 
 <style>
-	h1 {
-		font-weight: normal;
-	}
 </style>

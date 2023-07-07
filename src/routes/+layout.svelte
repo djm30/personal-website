@@ -3,12 +3,14 @@
 	import "@fontsource/roboto";
 	import "@fontsource-variable/jetbrains-mono";
 	import type { LayoutData } from "./$types";
+	import Navbar from "$lib/sections/Navbar.svelte";
 
 	export let data: LayoutData;
 </script>
 
 <main id="main" data-theme={data.theme ? data.theme : "device"}>
 	<div class="container">
+		<Navbar />
 		<slot />
 	</div>
 </main>
@@ -24,5 +26,7 @@
 
 	.container {
 		padding: 20px;
+		max-width: 1440px;
+		margin: 0 auto;
 	}
 </style>
