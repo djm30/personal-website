@@ -29,4 +29,10 @@
 		max-width: 1440px;
 		margin: 0 auto;
 	}
+
+	@media (min-width: 1200px) {
+		.container {
+			padding: 20px 80px;
+		}
+	}
 </style>
