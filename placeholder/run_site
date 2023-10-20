@@ -1,0 +1,15 @@
+#!/bin/bash
+docker build -t placeholder-site -f Dockerfile.site .
+
+docker run -it --rm --name placeholder-site \
+-v ${PWD}/nginx.conf:/etc/nginx/nginx.conf \
+-v ${PWD}:/letsencrypt \
+-v ${PWD}/src:/usr/share/nginx/html/ \
+-v ${PWD}/certs:/etc/letsencrypt \
+-p 80:80 \
+-p 443:443 \
+placeholder-site
+
+
+# Reload nginx
+# docker exec -it placeholder-site sh -c "nginx -s reload"

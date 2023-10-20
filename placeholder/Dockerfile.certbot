@@ -1,0 +1,16 @@
+FROM debian:buster
+
+RUN apt-get update -y && apt-get install -y certbot
+
+
+# certbot certonly --webroot
+
+# webroot is the folder we mounted: /letsencrypt
+# certificate outputs under etc/letsencrypt/live/**
+# since we share this volume with our webserver, we dont need to copy
+# certificates across.
+
+# Im guessing i could run this without docker and then just copy the certificate into the site container
+
+# video i watched: https://www.youtube.com/watch?v=jrR_WfgmWEw
+# Can run the certbot container again and run certbot renew
